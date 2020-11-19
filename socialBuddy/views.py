@@ -19,8 +19,26 @@ def dashboard(request):
 
 @login_required(login_url='/')
 def post_joke(request):
-    url_joke = 'https://official-joke-api.appspot.com/jokes/programming/random'
-    return render(request, "socialBuddy/Dashboard.html")
+    # url_joke = 'https://official-joke-api.appspot.com/jokes/programming/random'
+    url_joke = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,racist,sexist'
+    joke = requests.get(url_joke)
+    res = joke.json()
+    print("--- type ---", res['type'])
+    if joke.status_code == 200:
+        if res["type"] == "twopart":
+            res = {
+                "joke": res["setup"] + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + res["delivery"],
+            }
+        else:
+            res = {
+                "joke": res["joke"],
+            }
+        api.update_status(res['joke'])
+    else:
+        res = {
+            "error": "Nothing found!"
+        }
+    return render(request, "socialBuddy/Dashboard.html", {"response": res})
 
 
 @login_required(login_url='/')

@@ -24,7 +24,7 @@ SECRET_KEY = '_-0s0+k*a8wqdvn4_&%zemir71!6xvzkm@*l7lv+%7+fcp-k48'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["socialbuddy.herokuapp.com", "127.0.0.1:8000", "localhost:8000"]
+ALLOWED_HOSTS = ["socialbuddy.herokuapp.com", "127.0.0.1", "localhost"]
 
 API_KEY = "yv7jSvkn86VblXaroOvXLO3Rp"
 API_KEY_SECRET = "lgjrJMcnfkkO3ZfMpjl9kk4FYYqgxXglN6VQ14m1s2nJWCObt2"

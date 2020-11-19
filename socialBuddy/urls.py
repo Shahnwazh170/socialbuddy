@@ -10,4 +10,5 @@ urlpatterns = [
     path('dashboard/logout/', LogoutView.as_view()),
     path('dashboard/', views.dashboard),
     path('dashboard/post-meme', views.post_meme, name="post_meme"),
+    path('dashboard/post-joke', views.post_joke, name="post_joke"),
 ]

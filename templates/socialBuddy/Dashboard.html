@@ -139,7 +139,9 @@
         <a class="link" href="{% url 'post_meme' %}">
             <button>Post Meme</button>
         </a>
-        <button>Post Joke</button>
+        <a class="link" href="{% url 'post_joke' %}">
+            <button>Post Joke</button>
+        </a>
         <button>Twitter</button>
         <button>Twitter</button>
     </div>
@@ -147,6 +149,11 @@
         {% if response.error %}
             <h3>
                 {{ response.error }}
+            </h3>
+        {% endif %}
+        {% if response.joke %}
+            <h3>
+                {{ response.joke }}
             </h3>
         {% endif %}
         {% if response %}
