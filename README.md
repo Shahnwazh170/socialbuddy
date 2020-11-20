@@ -2,6 +2,8 @@
 
 SocialBuddy is a <b>Twitter Bot</b>. By using this you can post <b>random jokes or memes</b> with a single click.
 
+### Demo
+https://socialbuddy.herokuapp.com/
 
 <br>
 
