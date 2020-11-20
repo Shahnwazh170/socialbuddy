@@ -1,6 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
 # Byte-compiled / optimized / DLL files
+
+
+#env_variables.py
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -39,7 +43,6 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-env_variables.py
 
 # Unit test / coverage reports
 htmlcov/
