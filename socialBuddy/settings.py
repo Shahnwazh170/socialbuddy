@@ -27,13 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["socialbuddy.herokuapp.com", "127.0.0.1", "localhost"]
 
-
 API_KEY = env_variables.API_KEY
 API_KEY_SECRET = env_variables.API_KEY_SECRET
 ACCESS_TOKEN = env_variables.ACCESS_TOKEN
 ACCESS_TOKEN_SECRET = env_variables.ACCESS_TOKEN_SECRET
-
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
