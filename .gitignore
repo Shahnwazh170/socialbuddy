@@ -3,7 +3,7 @@
 # Byte-compiled / optimized / DLL files
 
 
-#env_variables.py
+env_variables.py
 
 __pycache__/
 *.py[cod]
