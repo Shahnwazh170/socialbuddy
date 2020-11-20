@@ -1,19 +1,14 @@
 import os
 
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.decorators import login_required
-from . import api
 import requests
-import json
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+
+from . import api
 
 
 @login_required(login_url='/')
 def dashboard(request):
-    # public_tweets = api.home_timeline()
-    # for tweet in public_tweets:
-    #     print(tweet.text)
     return render(request, "socialBuddy/Dashboard.html")
 
 

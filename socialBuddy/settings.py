@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import env_variables
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,17 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["socialbuddy.herokuapp.com", "127.0.0.1", "localhost"]
 
-API_KEY = "yv7jSvkn86VblXaroOvXLO3Rp"
-API_KEY_SECRET = "lgjrJMcnfkkO3ZfMpjl9kk4FYYqgxXglN6VQ14m1s2nJWCObt2"
-ACCESS_TOKEN = "922295559053905920-KpJiLNXRX6iIQDpG50y4YKfQlRzi1D6"
-ACCESS_TOKEN_SECRET = "QWjheo3plJ0KnCFJeFRoG7ylGCnLL3bZfGz3AHoliDi9u"
 
-# API_KEY = os.environ.get('API_KEY')
-# API_KEY_SECRET = os.environ.get('API_KEY_SECRET')
-# ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
-# ACCESS_TOKEN_SECRET = os.environ.get('ACCESS_TOKEN_SECRET')
+API_KEY = env_variables.API_KEY
+API_KEY_SECRET = env_variables.API_KEY_SECRET
+ACCESS_TOKEN = env_variables.ACCESS_TOKEN
+ACCESS_TOKEN_SECRET = env_variables.ACCESS_TOKEN_SECRET
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
