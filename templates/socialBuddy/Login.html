@@ -17,7 +17,7 @@
 
         .login-page {
             width: 360px;
-            padding: 8% 0 0;
+            padding: 3% 0 0;
             margin: auto;
         }
 
@@ -26,7 +26,7 @@
             z-index: 1;
             background: #FFFFFF;
             max-width: 360px;
-            margin: 0 auto 100px;
+            margin: 0 auto 20px;
             padding: 45px;
             text-align: center;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -128,11 +128,20 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        .demo {
+            color: #FFFFFF;
+            font-family: "Roboto", sans-serif;
+        }
     </style>
 </head>
 <body>
 
 <div class="login-page">
+    <div class="demo">
+        <h1>Hey! wanna try this out.</h1>
+        <h4>Username : demo <br> Password : 1234</h4>
+    </div>
     <div class="form">
         {% if form.errors %}
             {% for field in form %}

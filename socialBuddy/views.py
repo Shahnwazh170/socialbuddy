@@ -14,6 +14,7 @@ def dashboard(request):
 
 @login_required(login_url='/')
 def post_joke(request):
+    print("uu---", request.user)
     # url_joke = 'https://official-joke-api.appspot.com/jokes/programming/random'
     url_joke = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,racist,sexist'
     joke = requests.get(url_joke)
@@ -28,7 +29,9 @@ def post_joke(request):
             res = {
                 "joke": res["joke"],
             }
-        api.update_status(res['joke'])
+        if request.user.username == "Shahnwazh170":
+            print("uu---if ", request.user)
+            api.update_status(res['joke'])
     else:
         res = {
             "error": "Nothing found!"
@@ -46,7 +49,9 @@ def post_meme(request):
             "title": res["title"],
             "url": res["url"],
         }
-        tweet_image(res)
+        if request.user.username == "Shahnwazh170":
+            print("uu---if ", request.user)
+            tweet_image(res)
     else:
         res = {
             "error": "Nothing found!"

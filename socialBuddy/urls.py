@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LoginView.as_view(template_name="socialBuddy/Login.html",
                                redirect_authenticated_user=True)),
-    path('dashboard/logout/', LogoutView.as_view()),
+    path('dashboard/logout/', LogoutView.as_view(), name="logout"),
     path('dashboard/', views.dashboard),
     path('dashboard/post-meme', views.post_meme, name="post_meme"),
     path('dashboard/post-joke', views.post_joke, name="post_joke"),

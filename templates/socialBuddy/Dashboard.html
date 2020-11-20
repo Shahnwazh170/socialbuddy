@@ -125,17 +125,53 @@
             width: 100%;
             height: auto;
         }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: red;
+            width: 100px;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-weight: bold;;
+            font-size: 14px;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+
+        .logout:hover, .logout:active, .logout:focus {
+            background: darkred;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="login-page">
+    <a class="link" href="{% url 'logout' %}">
+        <button class="logout">Logout</button>
+    </a>
     <div class="hero">
+
         <h1>
-            Welcome Shahnwaz Husain!
+            Welcome {{ request.user.first_name }}!
         </h1>
+
+        {% ifequal  request.user.first_name "Demo" %}
+            <p>This is just for test. It's not gonna be posted on my account.</p>
+        {% endifequal %}
+        <br>
+
     </div>
     <div class="form">
+
         <a class="link" href="{% url 'post_meme' %}">
             <button>Post Meme</button>
         </a>
@@ -155,11 +191,11 @@
                 {{ response.joke }}
             </h3>
         {% endif %}
-        {% if response %}
+        {% if response.url %}
             <h3>
                 {{ response.title }}
             </h3>
-            <img src="{{ response.url }}">
+            <img src="{{ response.url }}" alt="meme">
         {% endif %}
     </div>
 </div>
