@@ -1,5 +1,4 @@
 import os
-
 import requests
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
@@ -14,8 +13,8 @@ def dashboard(request):
 
 @login_required(login_url='/')
 def post_joke(request):
-    print("uu---", request.user)
-    # url_joke = 'https://official-joke-api.appspot.com/jokes/programming/random'
+    print("---------------- ", request.path)
+    print("---------------- ", request.get_raw_uri())
     url_joke = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,racist,sexist'
     joke = requests.get(url_joke)
     res = joke.json()
@@ -39,10 +38,26 @@ def post_joke(request):
     return render(request, "socialBuddy/Dashboard.html", {"response": res})
 
 
+types = ["random-meme", "indian-meme", "programming-meme"]
+
+
 @login_required(login_url='/')
 def post_meme(request):
-    url_meme = 'https://meme-api.herokuapp.com/gimme'
+    print("---------------- ", request.path)
+    type_ = None
+    url_meme = None
+    if types[0] in request.path:
+        type_ = types[0]
+        url_meme = 'https://meme-api.herokuapp.com/gimme'
+    elif types[1] in request.path:
+        type_ = types[1]
+        url_meme = 'https://meme-api.herokuapp.com/gimme/india'
+    elif types[2] in request.path:
+        type_ = types[2]
+        url_meme = 'https://meme-api.herokuapp.com/gimme/programmerhumor'
+
     meme = requests.get(url_meme)
+
     if meme.status_code == 200:
         res = meme.json()
         res = {
@@ -51,7 +66,7 @@ def post_meme(request):
         }
         if request.user.username == "Shahnwazh170":
             print("uu---if ", request.user)
-            tweet_image(res)
+            tweet_image(res, type_)
     else:
         res = {
             "error": "Nothing found!"
@@ -60,12 +75,22 @@ def post_meme(request):
     return render(request, "socialBuddy/Dashboard.html", {"response": res})
 
 
-def tweet_image(res):
+def tweet_image(res, type_=None):
     filename = 'temp.jpg'
+    programming_meme_tags = " #programmerhumor #programming #coding #java #javascript #100daysofcode"
+    india_meme_tags = " #india"
     img = requests.get(res["url"], stream=True)
     with open(filename, 'wb') as image:
         for chunk in img:
             image.write(chunk)
 
-    api.update_with_media(filename, status=res["title"])
+    status = res["title"]
+    if type_ == types[0]:
+        pass
+    elif type_ == types[1]:
+        status = res["title"] + india_meme_tags
+    elif type_ == types[2]:
+        status = res["title"] + programming_meme_tags
+
+    api.update_with_media(filename, status=status)
     os.remove(filename)

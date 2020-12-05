@@ -9,6 +9,8 @@ urlpatterns = [
                                redirect_authenticated_user=True)),
     path('dashboard/logout/', LogoutView.as_view(), name="logout"),
     path('dashboard/', views.dashboard),
-    path('dashboard/post-meme', views.post_meme, name="post_meme"),
+    path('dashboard/random-meme', views.post_meme, name="random_meme"),
+    path('dashboard/indian-meme', views.post_meme, name="indian_meme"),
+    path('dashboard/programming-meme', views.post_meme, name="programming_meme"),
     path('dashboard/post-joke', views.post_joke, name="post_joke"),
 ]
