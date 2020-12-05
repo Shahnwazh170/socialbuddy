@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>SocialBuddy - Login</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
         .login-page {
             width: 50%;
@@ -21,7 +21,8 @@
             background: #FFFFFF;
         {#max-width: 360px;#}{#margin: 0 auto 100px;#} padding: 45px;
             text-align: center;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 10px 10px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 3px;
         }
 
 
@@ -39,10 +40,13 @@
             -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 3px;
+
         }
 
         .form button:hover, .form button:active, .form button:focus {
-            background: #43A047;
+            background: #dd7603;
         }
 
 
@@ -99,6 +103,9 @@
 
         .hero {
             color: #FFFFFF;
+            font-family: 'Nerko One', cursive;
+            font-size: 50px;
+            text-shadow: 6px 6px 3px rgba(0, 0, 0, 0.3);
         }
 
         .link {
@@ -117,7 +124,8 @@
             background: #FFFFFF;
         {#max-width: 360px;#}{#margin: 0 auto 100px;#} padding: 45px;
             text-align: center;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 10px 10px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 3px;
 
         }
 
@@ -143,6 +151,9 @@
             -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 3px;
+
         }
 
 
@@ -160,9 +171,9 @@
     </a>
     <div class="hero">
 
-        <h1>
+{#        <h1>#}
             Welcome {{ request.user.first_name }}!
-        </h1>
+{#        </h1>#}
 
         {% ifequal  request.user.first_name "Demo" %}
             <p>This is just for test. It's not gonna be posted on my account.</p>
