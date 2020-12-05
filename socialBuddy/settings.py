@@ -55,7 +55,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'socialBuddy.urls'
 
 LOGIN_URL = ""
-LOGIN_REDIRECT_URL = "dashboard/"
+LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = '/'
 
 TEMPLATES = [
