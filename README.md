@@ -19,10 +19,10 @@ Add the following variables
 ```
 #Collect your Api and Token key from your developer twitter account. 
 
-API_KEY = "yv7jSvkn86VblXaroOvXLO3Rp"
-API_KEY_SECRET = "lgjrJMcdsaaZfMpjhdjxsklsa6VQ14mddssedObt2"
-ACCESS_TOKEN = "9595836585hdhhsnjd-ghjdjkswidkmdmskllsmdm"
-ACCESS_TOKEN_SECRET = "dajdakdawdkasduakwjdasudandaawaidoaaidad"
+API_KEY = "XXXXXXXXXXXXXXXX"
+API_KEY_SECRET = "XXXXXXXXXXXXXXXX"
+ACCESS_TOKEN = "XXXXXXXXXXXXXXXX"
+ACCESS_TOKEN_SECRET = "XXXXXXXXXXXXXXXX"
 ```
 
 ##### Step 3
